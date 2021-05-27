@@ -1,5 +1,6 @@
 import React from 'react'
 import TaskTable from './table/TaskTable'
+import AddTaskForm from './forms/AddTaskForm'
 
 const App = () => {
   const tasksData = [
@@ -27,16 +28,7 @@ const App = () => {
       <div className="flex-row">
         <div className="flex-large">
           <h3>Add task</h3>
-
-          <form>
-            <label>Title</label>
-            <input type="text" name="title" value="" />
-
-            <label>Description</label>
-            <input type="text" name="description" value="" />
-
-            <button>Add new task</button>
-          </form>
+          <AddTaskForm />
         </div>
 
         <div className="flex-large">
