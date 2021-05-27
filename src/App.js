@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TaskTable from './table/TaskTable'
 import AddTaskForm from './forms/AddTaskForm'
 
@@ -7,19 +7,21 @@ const App = () => {
     {
       id: 1,
       title: 'Boletos',
-      description: 'pay the bills',
+      description: 'pay the bills'
     },
     {
       id: 2,
       title: 'Registration',
-      description: 'go to school',
+      description: 'go to school'
     },
     {
       id: 3,
       title: 'Movie',
-      description: 'buy tickets',
+      description: 'buy tickets'
     },
   ]
+
+  const [tasks, setTasks] = useState(tasksData)
 
   return (
     <div className="container">
