@@ -1,6 +1,24 @@
 import React from 'react'
 
 const App = () => {
+  const tasksData = [
+    {
+      id: 1,
+      title: 'Boletos',
+      description: 'pay the bills',
+    },
+    {
+      id: 2,
+      title: 'Registration',
+      description: 'go to school',
+    },
+    {
+      id: 3,
+      title: 'Movie',
+      description: 'buy tickets',
+    },
+  ]
+
   return (
     <div className="container">
       <h1>Todo List App</h1>
@@ -31,14 +49,24 @@ const App = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Study</td>
-                <td>I have study inglish</td>
-                <td>
-                  <button className="button muted-button">Edit</button>
-                  <button className="button muted-button">Delete</button>
-                </td>
-              </tr>
+              {tasksData.length > 0 ? (
+                tasksData.map((task) => (
+                  <tr key={task.id}>
+                    <td>{task.title}</td>
+                    <td>{task.description}</td>
+                    <td>
+                      <button className="button muted-button">Edit</button>
+                      <button className="button muted-button">Delete</button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td>No tasks.</td>
+                </tr>
+              )
+              }
+
             </tbody>
           </table>
         </div>
