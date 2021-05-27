@@ -1,4 +1,5 @@
 import React from 'react'
+import TaskTable from './table/TaskTable'
 
 const App = () => {
   const tasksData = [
@@ -40,35 +41,7 @@ const App = () => {
 
         <div className="flex-large">
           <h3>Table task list</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {tasksData.length > 0 ? (
-                tasksData.map((task) => (
-                  <tr key={task.id}>
-                    <td>{task.title}</td>
-                    <td>{task.description}</td>
-                    <td>
-                      <button className="button muted-button">Edit</button>
-                      <button className="button muted-button">Delete</button>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td>No tasks.</td>
-                </tr>
-              )
-              }
-
-            </tbody>
-          </table>
+          <TaskTable tasksData={tasksData} />
         </div>
       </div>
     </div>
