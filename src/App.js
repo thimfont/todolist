@@ -28,6 +28,10 @@ const App = () => {
     setTasks([...tasks, task])
   }
 
+  const deleteTask = (id) => {
+    setTasks(tasks.filter(task => task.id != id))
+  }
+
   return (
     <div className="container">
       <h1>Todo List App</h1>
@@ -40,7 +44,7 @@ const App = () => {
 
         <div className="flex-large">
           <h3>Table task list</h3>
-          <TaskTable tasksData={tasks} />
+          <TaskTable tasksData={tasks} deleteTask={deleteTask} />
         </div>
       </div>
     </div>

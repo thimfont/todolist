@@ -18,7 +18,9 @@ const TaskTable = (props) => {
                             <td>{task.description}</td>
                             <td>
                                 <button className="button muted-button">Edit</button>
-                                <button className="button muted-button">Delete</button>
+                                <button
+                                    onClick={() => props.deleteTask(task.id)}
+                                    className="button muted-button">Delete</button>
                             </td>
                         </tr>
                     ))
