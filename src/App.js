@@ -23,6 +23,11 @@ const App = () => {
 
   const [tasks, setTasks] = useState(tasksData)
 
+  const addTask = (task) => {
+    task.id = tasks.length + 1
+    setTasks([...tasks, task])
+  }
+
   return (
     <div className="container">
       <h1>Todo List App</h1>
@@ -30,12 +35,12 @@ const App = () => {
       <div className="flex-row">
         <div className="flex-large">
           <h3>Add task</h3>
-          <AddTaskForm />
+          <AddTaskForm addTask={addTask} />
         </div>
 
         <div className="flex-large">
           <h3>Table task list</h3>
-          <TaskTable tasksData={tasksData} />
+          <TaskTable tasksData={tasks} />
         </div>
       </div>
     </div>

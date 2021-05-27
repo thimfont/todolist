@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const AddTaskForm = () => {
+const AddTaskForm = (props) => {
     const initialFormState = {
         id: null,
         title: '',
@@ -15,7 +15,13 @@ const AddTaskForm = () => {
     }
 
     return (
-        <form>
+        <form
+            onSubmit={event => {
+                event.preventDefault()
+                props.addTask(task)
+                setTask(initialFormState)
+            }}
+        >
             <label>Title</label>
             <input
                 type="text"
@@ -30,7 +36,7 @@ const AddTaskForm = () => {
                 onChange={handleInputChange} />
 
             <button>Add new task</button>
-        </form>
+        </form >
     )
 }
 
