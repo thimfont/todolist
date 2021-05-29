@@ -38,6 +38,7 @@ const App = () => {
   }
 
   const deleteTask = (id) => {
+    setEditing(false)
     setTasks(tasks.filter(task => task.id != id))
   }
 
