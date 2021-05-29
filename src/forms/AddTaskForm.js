@@ -18,6 +18,8 @@ const AddTaskForm = (props) => {
         <form
             onSubmit={event => {
                 event.preventDefault()
+                if (!task.title || !task.description) return
+
                 props.addTask(task)
                 setTask(initialFormState)
             }}
