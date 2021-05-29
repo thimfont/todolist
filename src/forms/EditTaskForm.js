@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const EditTaskForm = (props) => {
 
@@ -8,6 +8,10 @@ const EditTaskForm = (props) => {
         const { name, value } = event.target
         setTask({ ...task, [name]: value })
     }
+
+    useEffect(() => {
+        setTask(props.currentTask)
+    }, [props])
 
     return (
         <form
